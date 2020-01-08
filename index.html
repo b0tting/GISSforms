@@ -26,10 +26,13 @@
   <script>
   $(document)
     .ready(function() {
+      // Grab template. This is hidden in script tags so they are not interpreted by the browser
       var source = document.getElementById("entry-template").innerHTML;
+      // Convert to JS code
       var welcomeTemplate = Handlebars.compile(source);
       $("#welcome").html(welcomeTemplate(configuration));
 
+      generic = configuration.entries
 
 
     })
@@ -58,9 +61,15 @@
 <script id="welcome-template" type="text/x-handlebars-template">
   <p>{{introduction}}</p>
 </script>
-<script id="entry-template" type="text/x-handlebars-template">
-  <p>{{introduction}}</p>
-</script>
+  <script id="entry" type="text/x-handlebars-template">
+     <div class="fluid card">
+    <div class="content">
+      <div class="header">{{description}}</div>
+      <div class="description">{{context}}</div>
+    </div>
+  </div>
+
+  </script>
 </head>
 <body>
 
@@ -69,7 +78,10 @@
     <div id="welcome"></div>
   </div>
 
-  <div class="ui text container" id="entries"></div>
+  <div class="ui text container" id="entries">
+    <div class="ui cards" id="entries">
+    </div>
+ </div>
 
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">
