@@ -2,128 +2,183 @@
 <html>
 
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <!-- Site Properties -->
-  <title>GISS - background and character introduction</title>
+    <!-- Site Properties -->
+    <title>GISS - background and character introduction</title>
 
-  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-  <script src="jquery/jquery-3.4.1.min.js"></script>
-  <script src="semantic/semantic.min.js"></script>
-  <script src="handlebars/handlebars.min-v4.5.3.js"></script>
-  <script src="giss.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <script src="jquery/jquery-3.4.1.min.js"></script>
+    <script src="semantic/semantic.min.js"></script>
+    <script src="handlebars/handlebars.min-v4.5.3.js"></script>
+    <script src="giss.js"></script>
 
-  <!--
+    <!--
 
-    Hi! If you are ready this, you are probably interested in all of the player options. In that case, check out the
-    giss.js file loaded earlier.
+      Hi! If you are ready this, you are probably interested in all of the player options. In that case, check out the
+      giss.js file loaded earlier.
 
-    Find the full code at https://github.com/b0tting/GISSforms
-    -->
+      Find the full code at https://github.com/b0tting/GISSforms
+      -->
 
-  <script lang="javascript">
-    function validateCode(code) {
-      var parts = code.match(/.{2}/g) || [];
-      var valid = true
-      parts.forEach(function (part, index) {
-        var found = false
-        console.log(configuration.codes)
-        for (var collect in configuration.codes) {
-          found = found || part in configuration.codes[collect]
+    <script lang="javascript">
+        function getCodeParts(code) {
+            return code.match(/.{2}/g) || [];
         }
-        valid = valid && found
-      });
-      return valid
-    }
 
-    function grabEntries(code) {
+        function refreshEntries(codedString) {
+            var entries = configuration.general;
+            entries = entries.concat(grabEntries(codedString));
+            var source = document.getElementById("entry-template").innerHTML;
+            var entryTemplate = Handlebars.compile(source);
+            $("#entries").html(entryTemplate(entries));
+        }
 
-    }
+        function validateCode(code) {
+            if(code.length > 0 && (code.length % 2 == 0)) {
+                var parts = getCodeParts(code)
+                var valid = true
+                parts.forEach(function (part, index) {
+                    var found = false
+                    for (var collect in configuration.codes) {
+                        found = found || part in configuration.codes[collect]
+                    }
+                    valid = valid && found
+                });
+            }
+            return valid
+        }
 
-    $(document)
-      .ready(function () {
-        // Grab template. This is hidden in script tags so they are not interpreted by the browser
-        var source = document.getElementById("welcome-template").innerHTML;
-        // Convert to JS code
-        var welcomeTemplate = Handlebars.compile(source);
-        $("#welcome").html(welcomeTemplate(configuration));
+        function grabEntries(code) {
+            var parts = getCodeParts(code);
+            var entries = [];
+            parts.forEach(function (part, index) {
+                for (var collect in configuration.codes) {
+                    if (part in configuration.codes[collect]) {
+                        entries.push(configuration.codes[collect][part])
+                    }
+                }
+            });
+            return entries
+        }
 
-        var codedString = location.search.substr(1)
-        if (codedString) {
-          entries = configuration.general
-          if (validateCode(codedString)) {
-            entries.push(grabEntries(codedString))
-          } else {
-            alert("This is not a valid code. ")
-          }
+        function handleInput() {
+            var code = $("#inputform").val().toUpperCase();
+            if (validateCode(code)) {
+                console.log("valid")
+                refreshEntries(code)
+            } else {
+                console.log("invalid")
+                $("#entries").empty()
+            }
+        }
 
-        var source = document.getElementById("entry-template").innerHTML;
-        entryTemplate = Handlebars.compile(source);
-        $("#entries").html(entryTemplate(entries));
+        $(document)
+            .ready(function () {
 
-      });
-  </script>
+                $("#inputbutton").on('click', function () {
+                    console.log("click")
+                    handleInput();
+                });
 
-  <style type="text/css">
-    body {
-      background-color: #FFFFFF;
-    }
+                $('#inputform').on('keyup', function() {
+                    handleInput();
+                });
 
-    .main.container {
-      margin-top: 2em;
-    }
 
-    .ui.footer.segment {
-      margin: 5em 0em 0em;
-      padding: 5em 0em;
-    }
-  </style>
+                $('.message .close').on('click', function () {
+                    $(this).closest('.message').transition('fade');
+                });
 
-  <script id="welcome-template" type="text/x-handlebars-template">
-    <p>{{introduction}}</p>
-  </script>
+                // Grab template. This is hidden in script tags so they are not interpreted by the browser
+                var source = document.getElementById("welcome-template").innerHTML;
+                // Convert to JS code
+                var welcomeTemplate = Handlebars.compile(source);
+                $("#welcome").html(welcomeTemplate(configuration));
 
-  <script id="entry-template" type="text/x-handlebars-template">
-    {{#each this}}
-     <div class="fluid card">
-    <div class="content">
-      <div class="header">{{description}}</div>
-      <div class="description">{{context}}</div>
-    </div>
-  </div>
-    {{/each}}
-  </script>
+                var codedString = location.search.substr(1)
+                if (codedString) {
+                    if (validateCode(codedString)) {
+                        refreshEntries(codedString)
+                    } else {
+                        $("#invalidcode").toggleClass("hidden")
+                    }
+                } else {
+                    $("#codeinput").toggleClass("hidden")
+                }
+            });
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .main.container {
+            margin-top: 2em;
+        }
+
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+            padding: 5em 0em;
+        }
+    </style>
+
+    <script id="welcome-template" type="text/x-handlebars-template">
+        <p>{{introduction}}</p>
+    </script>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <div class="column">
+            <div class="ui segment">
+                <div class="content">
+                    <h4>{{description}}</h4>
+                    <div class="description">{{context}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
 
 </head>
 
 <body>
 
-  <div class="ui main text container">
+<div class="ui main text container">
     <h1 class="ui header">GISS Context page</h1>
     <div id="welcome"></div>
-  </div>
+</div>
 
-  <div class="ui negative message" id="invalidcode">
-  <i class="close icon"></i>
-  <div class="header">
-    Your character code is not valid  
-  </div>
-  <p>That offer has expired
-</p></div>
-
-  <div class="ui text container">
-    <div class="ui cards" id="entries"></div>
-  </div>
-
-  <div class="ui inverted vertical footer segment">
-    <div class="ui center aligned container">
-      <h4 class="ui inverted header">GISS</h4>
-      <p></p>
+<div class="ui negative message hidden" id="invalidcode">
+    <i class="close icon"></i>
+    <div class="header">
+        Your character code is not valid
     </div>
-  </div>
+    <p>The given code is incorrect and coúld not be resolved to any meaningful character information
+    </p>
+</div>
+
+<div class="ui text container" id="codeinput">
+    <p></p>
+    <h3 class="header">Character input</h3>
+    <p>Give a code. Any code.</p>
+    <div class="ui action input" >
+  <input id="inputform" type="text"/>
+        <button id="inputbutton" class="ui button">Generate</button>
+    </div>
+</div>
+
+<h3 class="ui center aligned header">What you know..</h3>
+<div class="ui two column stackable grid container" id="entries">..is nothing at the moment. Sorry!
+</div>
+
+
+
+
 </body>
 
 </html>
