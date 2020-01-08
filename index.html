@@ -101,13 +101,12 @@
 
                 var codedString = location.search.substr(1)
                 if (codedString) {
+                    $("#codeinput").hide()
                     if (validateCode(codedString)) {
                         refreshEntries(codedString)
                     } else {
                         $("#invalidcode").toggleClass("hidden")
                     }
-                } else {
-                    $("#codeinput").toggleClass("hidden")
                 }
             });
     </script>
