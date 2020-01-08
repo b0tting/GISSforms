@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Standard Meta -->
   <meta charset="utf-8" />
@@ -15,7 +16,7 @@
   <script src="handlebars/handlebars.min-v4.5.3.js"></script>
   <script src="giss.js"></script>
 
-    <!--
+  <!--
 
     Hi! If you are ready this, you are probably interested in all of the player options. In that case, check out the
     giss.js file loaded earlier.
@@ -23,70 +24,104 @@
     Find the full code at https://github.com/b0tting/GISSforms
     -->
 
-  <script>
-  $(document)
-    .ready(function() {
-      // Grab template. This is hidden in script tags so they are not interpreted by the browser
-      var source = document.getElementById("entry-template").innerHTML;
-      // Convert to JS code
-      var welcomeTemplate = Handlebars.compile(source);
-      $("#welcome").html(welcomeTemplate(configuration));
+  <script lang="javascript">
+    function validateCode(code) {
+      var parts = code.match(/.{2}/g) || [];
+      var valid = true
+      parts.forEach(function (part, index) {
+        var found = false
+        console.log(configuration.codes)
+        for (var collect in configuration.codes) {
+          found = found || part in configuration.codes[collect]
+        }
+        valid = valid && found
+      });
+      return valid
+    }
 
-      generic = configuration.entries
+    function grabEntries(code) {
 
+    }
 
-    })
-  ;
+    $(document)
+      .ready(function () {
+        // Grab template. This is hidden in script tags so they are not interpreted by the browser
+        var source = document.getElementById("welcome-template").innerHTML;
+        // Convert to JS code
+        var welcomeTemplate = Handlebars.compile(source);
+        $("#welcome").html(welcomeTemplate(configuration));
 
-  showCodeResults(code) {
+        var codedString = location.search.substr(1)
+        if (codedString) {
+          entries = configuration.general
+          if (validateCode(codedString)) {
+            entries.push(grabEntries(codedString))
+          } else {
+            alert("This is not a valid code. ")
+          }
 
+        var source = document.getElementById("entry-template").innerHTML;
+        entryTemplate = Handlebars.compile(source);
+        $("#entries").html(entryTemplate(entries));
 
-  }
+      });
   </script>
 
   <style type="text/css">
+    body {
+      background-color: #FFFFFF;
+    }
 
-  body {
-    background-color: #FFFFFF;
-  }
-  .main.container {
-    margin-top: 2em;
-  }
+    .main.container {
+      margin-top: 2em;
+    }
 
-  .ui.footer.segment {
-    margin: 5em 0em 0em;
-    padding: 5em 0em;
-  }
+    .ui.footer.segment {
+      margin: 5em 0em 0em;
+      padding: 5em 0em;
+    }
   </style>
-<script id="welcome-template" type="text/x-handlebars-template">
-  <p>{{introduction}}</p>
-</script>
-  <script id="entry" type="text/x-handlebars-template">
+
+  <script id="welcome-template" type="text/x-handlebars-template">
+    <p>{{introduction}}</p>
+  </script>
+
+  <script id="entry-template" type="text/x-handlebars-template">
+    {{#each this}}
      <div class="fluid card">
     <div class="content">
       <div class="header">{{description}}</div>
       <div class="description">{{context}}</div>
     </div>
   </div>
-
+    {{/each}}
   </script>
+
 </head>
+
 <body>
 
   <div class="ui main text container">
-    <h1 class="ui header">Sticky Example</h1>
+    <h1 class="ui header">GISS Context page</h1>
     <div id="welcome"></div>
   </div>
 
-  <div class="ui text container" id="entries">
-    <div class="ui cards" id="entries">
-    </div>
- </div>
+  <div class="ui negative message" id="invalidcode">
+  <i class="close icon"></i>
+  <div class="header">
+    Your character code is not valid  
+  </div>
+  <p>That offer has expired
+</p></div>
+
+  <div class="ui text container">
+    <div class="ui cards" id="entries"></div>
+  </div>
 
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">
-          <h4 class="ui inverted header">GISS</h4>
-          <p></p>
+      <h4 class="ui inverted header">GISS</h4>
+      <p></p>
     </div>
   </div>
 </body>
