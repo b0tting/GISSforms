@@ -79,7 +79,7 @@
             return entries
         }
 
-        qrcode = false
+        qrcode = false 
         function handleInput() {
             var code = $("#inputform").val().toUpperCase();
             if (validateCode(code)) {
@@ -111,7 +111,7 @@
             }
         }
 
-        // Notice: we cannot do this from a jquery handler as handlebars loads 
+        // Notice: we can't do this from a jquery handler as handlebars loads 
         // later then the $.ready()
         function addCode(code, href) {
             clicked = $(href)
