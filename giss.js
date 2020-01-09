@@ -23,7 +23,7 @@ configuration = {
         "housing": {
             "HA": {
                 "description": "2 bedroom apartment",
-                "context": "You own a small (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen"
+                "context": "You own a <b>small</b> (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen"
             },
             "HB": {
                 "description": "3 bedroom apartment",

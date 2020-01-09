@@ -9,9 +9,8 @@ Players on their form get a code at the bottom. This code translates to their sp
 - Use the URL directly, with a question mark. For example, https://eproprio.otting.org/?AABBCCDD
 - Scan the QR code at the bottom of their form using their phone camera
 - Use the base URL without a code parameter and enter their own code into the text field
-- An additional special URL is there for game setup using the ?ADMIN url, which shows all available entries
 
-In game setup, the organizer should use the ?ADMIN url, consider which codes to add to a form and add these together. Then either add that directly to the form or use the base URL to test the code and generate a QR code image.  
+In game setup, the organizer should use the main url without any parameters, consider which codes to add to a form and add these together. Then either add that directly to the form or use the base URL to test the code and generate a QR code image.  
    
 # Configuration
 ### Codes
@@ -21,12 +20,12 @@ Note that codes are stupid and simple. In the configuration file, every bit of c
 For most of the layout, the following type of setup is given:
 ```
 { 
-    'entry_type': {
-        'AA': {
-            'description';'Short single linge description matching the text in the form',
-            'context':'Longer paragraph detailing the information  
+    "housing": {
+        "HA": {
+            "description": "2 bedroom apartment",
+            "context": "You own a small (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen"
         }
-    } 
+    }
 } 
 ```
  
@@ -34,7 +33,8 @@ Entries can contain simple HTML such as the \<b\> tags for bold. Remember to use
 
 The layout of this JSON file is as following
 - The introduction contains the note mentioned at the head of the page
-- Generic entries are 
+- Generic entries are added on the top and will be available for all players
+- Below that come the seperate blocks with coded entries
 
 ### Entry types
 The entry types have no actual function at the moment, they just add some clarity. The exception is the "generic" entry type, every entry in "generic" is always shown. This also has a different setup in that there is not code before the description.  
@@ -47,8 +47,5 @@ In the configuration file there is mention of an URL used to generate the QR cod
 - Semantic UI
 - JQuery
 - Handlebars.js
+- qrcode.js
  
-
-
-
-
