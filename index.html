@@ -20,7 +20,30 @@
 
         .cali {
         	font-family: 'CalifornianFB' !important;
-            font-size: 2em
+            font-size: 4vw;
+            color: grey;
+        }
+
+        @media screen and (min-width: 1200px) {
+          .cali {
+             font-size: 40px;
+          }
+        }
+        @media screen and (max-width: 680px) {
+          .cali {
+             display: none;
+          }
+
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        .tight {
+            margin-top: 0px;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
         }
 
     </style>
@@ -186,16 +209,6 @@
             });
     </script>
 
-    <style type="text/css">
-        body {
-            background-color: #FFFFFF;
-        }
-
-        .main.container {
-            margin-top: 0em;
-        }
-    </style>
-
     <script id="welcome-template" type="text/x-handlebars-template">
         <p>{{introduction}}</p>
     </script>
@@ -232,14 +245,19 @@
 </head>
 
 <body>
-<div class="ui main text container right aligned">
-    <p class="cali"><img src="ïmg/label.jpg"/>General Intelligence and Security Service</p>
-    <p class="cali"><i>Ministry of Internal Affairs</i></p>
+<div class="ui grid tight">
+  <div class="sixteen wide column tight"></div>
+  <div class="ten wide column"></div>
+    <div class="one wide column"><img src="img/label.jpg"/></div>
+    <div class="five wide column">
+      <p class="cali">General Intelligence and Security Service</p>
+      <p class="cali"><i>Ministry of Internal Affairs</i></p>
+  </div>
 </div>
 
 
 <div class="ui main text container">
-    <h1 class="ui header">GISS Context page</h1>
+    <h1 class="ui header cali">Context page</h1>
     <div id="welcome"></div>
 </div>
 
@@ -269,10 +287,9 @@
 </div>
 
 <h3 class="ui center aligned header">What you know..</h3>
-<div class="ui two column stackable grid container" id="entries">..is nothing at the moment. Sorry!
+<div class="ui two column stackable grid container" id="entries">
+    <div class="segment center aligned">..is nothing at the moment. This is probably due to not entering a code. You can find the correct URL at the bottom of your character form or by scanning the QR code with your telephone.</div>
 </div>
-
-
 
 </body>
 </html>

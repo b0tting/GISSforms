@@ -1,6 +1,6 @@
 configuration = {
     "url": "https://eproprio.otting.org/",
-    "introduction": "This is a background context page for the GISS game. At the bottom of your government form there is a code, please enter it here to get some additional information on the different segments relevant for your character role.",
+    "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
     "codes": {
         "general": [{
                 "description": "Verus Deus",
