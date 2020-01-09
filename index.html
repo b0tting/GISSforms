@@ -11,6 +11,20 @@
     <title>GISS - background and character introduction</title>
 
     <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <style>
+        @font-face {
+            font-family: 'CalifornianFB';
+            src: url('fonts/CalifornianFB.eot');
+            src: local('CalifornianFB'), url('fonts/CalifornianFB.woff') format('woff'), url('fonts/CalifornianFB.ttf') format('truetype');
+        }
+
+        .cali {
+        	font-family: 'CalifornianFB' !important;
+            font-size: 2em
+        }
+
+    </style>
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="semantic/semantic.min.js"></script>
     <script src="js/handlebars.min-v4.5.3.js"></script>
@@ -178,7 +192,7 @@
         }
 
         .main.container {
-            margin-top: 2em;
+            margin-top: 0em;
         }
     </style>
 
@@ -218,6 +232,11 @@
 </head>
 
 <body>
+<div class="ui main text container right aligned">
+    <p class="cali"><img src="ïmg/label.jpg"/>General Intelligence and Security Service</p>
+    <p class="cali"><i>Ministry of Internal Affairs</i></p>
+</div>
+
 
 <div class="ui main text container">
     <h1 class="ui header">GISS Context page</h1>
