@@ -88,7 +88,7 @@
                 }
                 url = configuration.url + "?" + code
                 $("#invalidinput").toggleClass("hidden", true)
-                $("#url").html("<a href='" + url + "'>"+url+"</a>")
+                $("#url").html("<a href='" + url + "' target='_blank'>"+url+"</a>")
                 if(qrcode) {
                     qrcode.makeCode(url)
                 } else {
