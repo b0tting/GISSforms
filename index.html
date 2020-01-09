@@ -19,21 +19,32 @@
 
     <!--
 
-      Hi! If you are ready this, you are probably interested in all of the player options. In that case, check out the
-      giss.js file loaded earlier.
+      Hi! If you are reading this, you are probably interested in all of the player options. In that case, check out the
+      giss.js file loaded earlier. Also cool: check the ?ADMIN URL to get the game master page and shopping cart your options
 
       Find the full code at https://github.com/b0tting/GISSforms
-      -->
+    -->
 
     <script lang="javascript">
         function getCodeParts(code) {
-            return code.match(/.{2}/g) || [];
+            var codes = code.match(/.{2}/g) || [];
+            var codesUniq = [];
+            $.each(codes, function(i, el){
+                if($.inArray(el, codesUniq) === -1) codesUniq.push(el);
+            });
+            return codesUniq
         }
 
-        function refreshEntries(codedString) {
-            var entries = configuration.general;
-            entries = entries.concat(grabEntriesFromConfig(codedString));
+        function refreshEntries(codedString) {            
+            entries = grabEntriesFromConfig(codedString);
             var source = document.getElementById("entry-template").innerHTML;
+            var entryTemplate = Handlebars.compile(source);
+            $("#entries").html(entryTemplate(entries));
+        }
+
+        function showAllEntries() {
+            entries = Object.values(cachedCodes)
+            var source = document.getElementById("admin-template").innerHTML;
             var entryTemplate = Handlebars.compile(source);
             $("#entries").html(entryTemplate(entries));
         }
@@ -42,27 +53,29 @@
             if(code.length > 0 && (code.length % 2 == 0)) {
                 var parts = getCodeParts(code)
                 var valid = true
-                parts.forEach(function (part, index) {
-                    var found = false
-                    for (var collect in configuration.codes) {
-                        found = found || part in configuration.codes[collect]
-                    }
-                    valid = valid && found
-                });
+                for(var part in parts) {
+                    valid = valid && Object.keys(cachedCodes).includes(parts[part])
+                }
             }
             return valid
         }
 
         function grabEntriesFromConfig(code) {
-            var parts = getCodeParts(code);
             var entries = [];
-            parts.forEach(function (part, index) {
-                for (var collect in configuration.codes) {
-                    if (part in configuration.codes[collect]) {
-                        entries.push(configuration.codes[collect][part])
+            // Grab the un-coded entries
+            for (var collection in configuration.codes) {
+                for(entry in configuration.codes[collection]) {
+                    if(!("code" in configuration.codes[collection][entry]) || code === false) {
+                        entries.push(configuration.codes[collection][entry])
                     }
                 }
-            });
+            }
+
+            // And grab the now validated code parts from the cachedCodes
+            var parts = getCodeParts(code);
+            for(part in parts) {
+                entries.push(cachedCodes[parts[part]])
+            }
             return entries
         }
 
@@ -70,26 +83,53 @@
         function handleInput() {
             var code = $("#inputform").val().toUpperCase();
             if (validateCode(code)) {
-                refreshEntries(code)
+                if(!admin) {
+                    refreshEntries(code)
+                }
                 url = configuration.url + "?" + code
                 $("#invalidinput").toggleClass("hidden", true)
                 $("#url").html("<a href='" + url + "'>"+url+"</a>")
                 if(qrcode) {
-                  qrcode.makeCode(url)
+                    qrcode.makeCode(url)
                 } else {
-                  qrcode = new QRCode(document.getElementById("qrcode"), url);
+                    qrcode = new QRCode(document.getElementById("qrcode"), url);
                 }
             } else {
-              $("#url").html("...")
-              $("#invalidinput").toggleClass("hidden", false)
+                $("#url").html("...")
+                $("#invalidinput").toggleClass("hidden", false)
             }
         }
 
+        function cacheTheCodes() {
+            for (var collection in configuration.codes) {
+                for(entry in configuration.codes[collection]) {
+                    if("code" in configuration.codes[collection][entry]) {
+                        fullEntry = configuration.codes[collection][entry]
+                        cachedCodes[fullEntry.code] = fullEntry
+                    }
+                }
+            }
+        }
+
+        // Notice: we cannot do this from a jquery handler as handlebars loads 
+        // later then the $.ready()
+        function addCode(code, href) {
+            clicked = $(href)
+            if(clicked.hasClass("red")) {
+                clicked.toggleClass("red")
+                clicked.toggleClass("black")
+                $("#inputform").val($("#inputform").val() + code) 
+                handleInput()
+            } 
+        }
+
+        var cachedCodes = []
+        admin = false
         $(document)
             .ready(function () {
+                cacheTheCodes()
 
                 $("#inputbutton").on('click', function () {
-                    console.log("click")
                     handleInput();
                 });
 
@@ -111,15 +151,22 @@
                 $("#welcome").html(welcomeTemplate(configuration));
 
                 // Check the query string and see if there's a code
+                $("#codeinput").hide()
+                $("#coderesult").hide()
                 var codedString = location.search.substr(1)
                 if (codedString) {
-                    // If there is a code, hide the editor
-                    $("#codeinput").hide()
-                    $("#coderesult").hide()
-                    if (validateCode(codedString)) {
-                        refreshEntries(codedString)
+                    if(codedString == "ADMIN") {
+                        admin = true
+                        showAllEntries()
+                        $("#codeinput").show()
+                        $("#coderesult").show()
                     } else {
-                        $("#invalidcode").toggleClass("hidden")
+                        // If there is a code, hide the editor
+                        if (validateCode(codedString)) {
+                            refreshEntries(codedString)
+                        } else {
+                            $("#invalidcode").toggleClass("hidden")
+                        }
                     }
                 }
             });
@@ -133,11 +180,6 @@
         .main.container {
             margin-top: 2em;
         }
-
-        .ui.footer.segment {
-            margin: 5em 0em 0em;
-            padding: 5em 0em;
-        }
     </style>
 
     <script id="welcome-template" type="text/x-handlebars-template">
@@ -150,12 +192,28 @@
             <div class="ui segment raised">
                 <div class="content">
                     <h4>{{description}}</h4>
+                    <!-- Tripple moustachios to be able to use HTML in context variables -->
                     <div class="description">{{{context}}}</div>
                 </div>
             </div>
         </div>
         {{/each}}
     </script>
+
+    <script id="admin-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <div class="column">
+                <div class="ui segment raised">
+                    <a class="ui red right ribbon label" href="javascript:;" onClick="addCode('{{code}}', this)">{{code}}</a>
+                    <div class="content">
+                        <h4>{{description}} </h4>
+                        <!-- Tripple moustachios to be able to use HTML in context variables -->
+                        <div class="description">{{{context}}}</div>
+                    </div>
+                </div>           
+        </div>
+        {{/each}}
+    </script>    
 
 </head>
 
@@ -179,22 +237,23 @@
     <h3 class="header">Character input</h3>
     <p>Give a code. Any code.</p>
     <div class="ui action input" >
-      <input id="inputform" type="text"/>
-      <button id="inputbutton" class="ui button">Generate</button>
-      <div id="invalidinput" class="ui left pointing red basic label hidden">
-        Code is invalid!
-      </div>
+        <input id="inputform" type="text"/>
+        <button id="inputbutton" class="ui button">Generate</button>
+        <div id="invalidinput" class="ui left pointing red basic label hidden">Code is invalid!</div>
     </div>
+</div>
+
+<p></p>
+<div class="ui two column stackable grid container" id="coderesult">
+    <div class="column"><div class="ui raised segment"><H3 id="url">...</h3></div></div>
+    <div class="column"><div id="qrcode" class="ui text center aligned"></div></div>
 </div>
 
 <h3 class="ui center aligned header">What you know..</h3>
 <div class="ui two column stackable grid container" id="entries">..is nothing at the moment. Sorry!
 </div>
 
-<div class="ui two column stackable grid container" id="coderesult">
-    <div class="column"><div class="ui raised segment"><H3 id="url">...</h3></div></div>
-    <div class="column"><div id="qrcode" class="ui text center aligned"></div></div>
-</div>
+
 
 </body>
 </html>
