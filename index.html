@@ -11,9 +11,10 @@
     <title>GISS - background and character introduction</title>
 
     <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
-    <script src="jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="semantic/semantic.min.js"></script>
-    <script src="handlebars/handlebars.min-v4.5.3.js"></script>
+    <script src="js/handlebars.min-v4.5.3.js"></script>
+    <script src="js/qrcode.min.js"></script>
     <script src="giss.js"></script>
 
     <!--
@@ -31,7 +32,7 @@
 
         function refreshEntries(codedString) {
             var entries = configuration.general;
-            entries = entries.concat(grabEntries(codedString));
+            entries = entries.concat(grabEntriesFromConfig(codedString));
             var source = document.getElementById("entry-template").innerHTML;
             var entryTemplate = Handlebars.compile(source);
             $("#entries").html(entryTemplate(entries));
@@ -52,7 +53,7 @@
             return valid
         }
 
-        function grabEntries(code) {
+        function grabEntriesFromConfig(code) {
             var parts = getCodeParts(code);
             var entries = [];
             parts.forEach(function (part, index) {
@@ -65,14 +66,22 @@
             return entries
         }
 
+        qrcode = false
         function handleInput() {
             var code = $("#inputform").val().toUpperCase();
             if (validateCode(code)) {
-                console.log("valid")
                 refreshEntries(code)
+                url = configuration.url + "?" + code
+                $("#invalidinput").toggleClass("hidden", true)
+                $("#url").html("<a href='" + url + "'>"+url+"</a>")
+                if(qrcode) {
+                  qrcode.makeCode(url)
+                } else {
+                  qrcode = new QRCode(document.getElementById("qrcode"), url);
+                }
             } else {
-                console.log("invalid")
-                $("#entries").empty()
+              $("#url").html("...")
+              $("#invalidinput").toggleClass("hidden", false)
             }
         }
 
@@ -88,20 +97,25 @@
                     handleInput();
                 });
 
-
                 $('.message .close').on('click', function () {
                     $(this).closest('.message').transition('fade');
                 });
 
-                // Grab template. This is hidden in script tags so they are not interpreted by the browser
+                // If you are not familiar with handlebars.js:
+                // - Grab template source
+                // - Compile this into a JS object
+                // - Feed variables into this object
+                // - Dump the resulting HTML onto the page
                 var source = document.getElementById("welcome-template").innerHTML;
-                // Convert to JS code
                 var welcomeTemplate = Handlebars.compile(source);
                 $("#welcome").html(welcomeTemplate(configuration));
 
+                // Check the query string and see if there's a code
                 var codedString = location.search.substr(1)
                 if (codedString) {
+                    // If there is a code, hide the editor
                     $("#codeinput").hide()
+                    $("#coderesult").hide()
                     if (validateCode(codedString)) {
                         refreshEntries(codedString)
                     } else {
@@ -133,7 +147,7 @@
     <script id="entry-template" type="text/x-handlebars-template">
         {{#each this}}
         <div class="column">
-            <div class="ui segment">
+            <div class="ui segment raised">
                 <div class="content">
                     <h4>{{description}}</h4>
                     <div class="description">{{context}}</div>
@@ -157,17 +171,19 @@
     <div class="header">
         Your character code is not valid
     </div>
-    <p>The given code is incorrect and coúld not be resolved to any meaningful character information
-    </p>
+    <p>The given code is incorrect and could not be resolved to any meaningful character information    </p>
 </div>
 
-<div class="ui text container" id="codeinput">
+<div class="ui text container center aligned" id="codeinput">
     <p></p>
     <h3 class="header">Character input</h3>
     <p>Give a code. Any code.</p>
     <div class="ui action input" >
-  <input id="inputform" type="text"/>
-        <button id="inputbutton" class="ui button">Generate</button>
+      <input id="inputform" type="text"/>
+      <button id="inputbutton" class="ui button">Generate</button>
+      <div id="invalidinput" class="ui left pointing red basic label hidden">
+        Code is invalid!
+      </div>
     </div>
 </div>
 
@@ -175,9 +191,10 @@
 <div class="ui two column stackable grid container" id="entries">..is nothing at the moment. Sorry!
 </div>
 
-
-
+<div class="ui two column stackable grid container" id="coderesult">
+    <div class="column"><div class="ui raised segment"><span id="url">...</span></div></div>
+    <div class="column"><div id="qrcode" class="ui text center aligned"></div></div>
+</div>
 
 </body>
-
 </html>
