@@ -64,6 +64,7 @@
 
     <script lang="javascript">
         function getCodeParts(code) {
+            // Splits the code into segments, then hammer out all the doubles and returns a list of those segments
             var codes = code.match(/.{2}/g) || [];
             var codesUniq = [];
             $.each(codes, function(i, el){
@@ -72,7 +73,7 @@
             return codesUniq
         }
 
-        function refreshEntries(codedString) {            
+        function refreshEntries(codedString) {
             entries = grabEntriesFromConfig(codedString);
             var source = document.getElementById("entry-template").innerHTML;
             var entryTemplate = Handlebars.compile(source);
@@ -99,7 +100,14 @@
 
         function grabEntriesFromConfig(code) {
             var entries = [];
-            // Grab the un-coded entries
+
+            // Grab the now validated code parts from the cachedCodes
+            var parts = getCodeParts(code);
+            for(part in parts) {
+                entries.push(cachedCodes[parts[part]])
+            }
+
+            // Then add the generic entries
             for (var collection in configuration.codes) {
                 for(entry in configuration.codes[collection]) {
                     if(!("code" in configuration.codes[collection][entry]) || code === false) {
@@ -108,24 +116,20 @@
                 }
             }
 
-            // And grab the now validated code parts from the cachedCodes
-            var parts = getCodeParts(code);
-            for(part in parts) {
-                entries.push(cachedCodes[parts[part]])
-            }
             return entries
         }
 
-        qrcode = false 
+        qrcode = false;
         function handleInput() {
+            // This method would only trigger whenever the game master is entering a new code
             var code = $("#inputform").val().toUpperCase();
             if (validateCode(code)) {
-                if(!admin) {
-                    refreshEntries(code)
-                }
-                url = configuration.url + "?" + code
+                // Generate a URL for shortcutting to this combination of entries
+                url = configuration.url + "?" + code;
                 $("#invalidinput").toggleClass("hidden", true)
                 $("#url").html("<a href='" + url + "' target='_blank'>"+url+"</a>")
+
+                // ..and generate a new QR code to copy/paste by the gamemaster
                 if(qrcode) {
                     qrcode.makeCode(url)
                 } else {
@@ -138,6 +142,7 @@
         }
 
         function cacheTheCodes() {
+            // Cache the code in a segment/entry collection
             for (var collection in configuration.codes) {
                 for(entry in configuration.codes[collection]) {
                     if("code" in configuration.codes[collection][entry]) {
@@ -243,18 +248,17 @@
     </script>    
 
 </head>
-
 <body>
+
 <div class="ui grid tight">
   <div class="sixteen wide column tight"></div>
   <div class="ten wide column"></div>
-    <div class="one wide column"><img src="img/label.jpg"/></div>
+    <div class="one wide column"><img alt="" src="img/label.jpg"/></div>
     <div class="five wide column">
       <p class="cali">General Intelligence and Security Service</p>
       <p class="cali"><i>Ministry of Internal Affairs</i></p>
   </div>
 </div>
-
 
 <div class="ui main text container">
     <h1 class="ui header cali">Context page</h1>
