@@ -18,11 +18,11 @@ configuration = {
         "housing": [{
                 "code":"HA",
                 "description": "2 bedroom apartment",
-                "context": "You own a <b>small</b> (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen"
+                "context": "You own a <b>small</b> (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen. It's already wayyy to small as it is, no way that you want to share this."
             },{
                 "code":"HB",
                 "description": "3 bedroom apartment",
-                "context": "You own a three room apartment near the center of Assen, which you share with your 9 cats"
+                "context": "You own a three room apartment near the center of Assen, which you share with your 9 cats."
             },{
                 "code":"HC",
                 "description": "1 bedroom appartment",
@@ -30,7 +30,7 @@ configuration = {
             },{
                 "code":"HE",
                 "description": "2 bedroom apartment",
-                "context": "You have a nice appartment in decent shape, about 45m2. Its om the third floor though, and no elevator or garden"
+                "context": "You have a nice appartment in decent shape, about 45m2. Its om the third floor though, and no elevator or garden. To compensate for the lack of garden, your house is full with plants."
             },{
                 "code":"HF",
                 "description": "2 bedroom apartment",
@@ -42,7 +42,7 @@ configuration = {
             },{
                 "code":"HI",
                 "description": "Small house",
-                "context": "You have a reasonable sized house, about 80m2, with a back garden, 2 floors"
+                "context": "You have a reasonable sized house, about 80m2, with a back garden, 2 floors. You would very happely share the house with other people, there is enough space available."
             },{
                 "code":"HJ",
                 "description": "Normal sized house",
@@ -50,7 +50,7 @@ configuration = {
             },{
                 "code":"HK",
                 "description": "Corner house",
-                "context": "You have a large corner house, about 200m2, with a front and back garden, 3 floors, in the best part of Assen."
+                "context": "You have a large corner house, about 200m2, with a front and back garden, 3 floors, in the best part of Assen. And you are very proud, you don't want anything to happen to your house."
             },{
                 "code":"HL",
                 "description": "Large manor",
@@ -59,20 +59,20 @@ configuration = {
         "religion": [{
                 "code":"RV",
                 "description": "Verus Deus",
-                "context": "They believe in the authentic gods and flat earth. The flooding of the Netherlands is seen as a punishment of God. Pray 4 times a day, dietary restrictions, 10% donation mandatory. You expect your roommate to comply with your laws of faith."
+                "context": "You as a player are totally free to decide what the religion is about. They believe in the authentic gods and flat earth. The flooding of the Netherlands is seen as a punishment of God. Pray 4 times a day, dietary restrictions, 10% donation mandatory. You expect your roommate to comply with your laws of faith."
             },{
                 "code":"RF",
                 "description": "The Frisian doctrine",
-                "context": "Strict religion which sees the province of ‘Frisia (Friesland) as the center of religious origin. Prophet is John the Frisian. There are dress codes, no electronic devices allowed in the house. You expect your roommate to comply with your laws of faith."
+                "context": "You as a player are totally free to decide what the religion is about. Strict religion which sees the province of ‘Frisia (Friesland) as the center of religious origin. Prophet is John the Frisian. There are dress codes, no electronic devices allowed in the house. You expect your roommate to comply with your laws of faith."
             }],
         "employment": [{
                 "code":"EE",
                 "description": "eProPrio in Drachten",
-                "context": "Your employer is eProPrio, a Chinese owned social media company. Currently the largest in the world. Your job is setting up queries for the Dutch and European secret services to report individual profiling by group membership and message content"
+                "context": "Your employer is eProPrio, a Chinese owned social media and software company. Currently the largest in the world. Your job is setting up queries for the Dutch and European secret services to report individual profiling by group membership and message content"
             },{
                 "code":"EN",
                 "description": "Nature heritage foundation in Smilde",
-                "context": "Foundation for the preservation of existing nature areas in the Netherlands. Their main view point is that no nature may be turned into farms, buildings or used for tourism."
+                "context": "Foundation for the preservation of existing nature areas in the Netherlands. Their main view point is that no nature may be turned into farms, buildings or used for tourism. And actually want more room for nature, but thats not common knowledge."
             },{
                 "code":"EF",
                 "description": "Forum for Freedom and Democracy (FFD) in Assen",
@@ -88,23 +88,23 @@ configuration = {
             },{
                 "code":"ET",
                 "description": "Iris Agricultural technique B.V in Laaghalen",
-                "context": "Company that develops techniques for dairy farming. It is also a lobby party for dairy farmers."
+                "context": "Company that develops techniques for dairy farming. It is also a lobby party for dairy farmers. Their main objective is to create more space for cows."
             },{
                 "code":"EO",
                 "description": "Ocean Construction company in Hooghalen",
-                "context": "Company that carries out major construction projects such as new housing developments around Assen. Lobby party for more land for constructions."
+                "context": "Company that carries out major construction projects such as new housing developments around Assen. Lobby party for more land for constructions. Obviously more houses is better, there is way more housing needed."
             },{
                 "code":"EG",
                 "description": "Golf course ‘Maxima lake’ in Assen",
-                "context": "Tourist attraction, the golf course is the place for the annual European Golf Championships."
+                "context": "Tourist attraction, the golf course is the place for the annual European Golf Championships. You are happy that you have a job, so want to make sure that the golf course stays."
             },{
                 "code":"EM",
                 "description": "Middle Parcs in Nijlande",
-                "context": "Chain of holiday resorts within Europe, big supporter of the EU. Has made huge profits in recent years with the permanent rental of properties."
+                "context": "Chain of holiday resorts within Europe, big supporter of the EU. Has made huge profits in recent years with the permanent rental of properties, and as an employee, you got your fair share out f it."
             }],
         "giss": [{
                 "code":"GA",
-                "description": "Mmbership of NDAH, the New Dutch anarchist humanitarians",
+                "description": "Membership of NDAH, the New Dutch anarchist humanitarians",
                 "context": "Political organization that strives for a government without a central organization and wants to divide the common space on the basis of scientific evidence. They also strive for a universal basic income."
             },{
                 "code":"GB",
@@ -137,7 +137,7 @@ configuration = {
             },{
                 "code":"GI",
                 "description": "Openly writing as an atheist",
-                "context": "Research has shown that you are known on several so-called internet forums under the name `Atheist01`"
+                "context": "Research has shown that you are known on several so-called internet forums under the name `Atheist01`, and are actively protesting against religious influences."
             },{
                 "code":"GJ",
                 "description": "You have been a suspect in the investigation into forgery of documents on behalf of the organization Cow defense force",
@@ -145,11 +145,11 @@ configuration = {
             },{
                 "code":"GK",
                 "description": "Lackofclass website messages against climate change",
-                "context": "You have an account on the website www.lackofclass.nl and has written the following among other things: `Greta Turnberg= climate soldier, child soldier. `"
+                "context": "You have an account on the website www.lackofclass.nl and has written the following among other things: `Greta Turnberg= climate soldier, child soldier. ` Lackofclass is a website for inflammatory articles and extremist views."
             },{
                 "code":"GL",
                 "description": "You are the founder of DACV, Dutch association for critical vaccination",
-                "context": "Association that opposes vaccination and tries to convince people not to vaccinate their children"
+                "context": "Association that opposes vaccination and tries to convince people not to vaccinate their children. You have actively taken part in demonstrations and flyered to make people aware."
             },{
                 "code":"GM",
                 "description": "Unlawful use of subsidies",
@@ -189,7 +189,7 @@ configuration = {
             },{
                 "code":"GV",
                 "description": "Doomsday prepper",
-                "context": "You participated in the so-called `Doomsday preppers` symposium."
+                "context": "You participated in the so-called `Doomsday preppers` symposium. You think the end is near, and are actively preparing yourself and the people close to you against whatever you think is coming your way."
             },{
                 "code":"GW",
                 "description": "Speaking against WeCAN",
