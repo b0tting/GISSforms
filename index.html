@@ -68,6 +68,7 @@
             var codes = code.match(/.{2}/g) || [];
             var codesUniq = [];
             $.each(codes, function(i, el){
+                el = el.toUpperCase()
                 if($.inArray(el, codesUniq) === -1) codesUniq.push(el);
             });
             return codesUniq
@@ -270,7 +271,7 @@
     <div class="header">
         Your character code is not valid
     </div>
-    <p>The given code is incorrect and could not be resolved to any meaningful character information    </p>
+    <p>The given code is incorrect and could not be resolved to any meaningful character information. Note that the URL in the address bar should resemble 'http://eproprio.otting.org?ABCD'. </p>
 </div>
 
 <div class="ui text container center aligned" id="codeinput">
