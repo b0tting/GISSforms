@@ -1,6 +1,13 @@
 configuration = {
     "url": "https://eproprio.otting.org/",
-    "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
+    "lexicon": {
+      "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
+        "ministry_title": "General Intelligence and Security Service",
+        "ministry_title2": "Ministry of Internal Affairs",
+        "page_title":"Context page",
+        "whatyouknow": "What you know..",
+        "whateverybodyknows":"What everybody knows..",
+    },
     "codes": {
         "general": [{
                 "description": "Verus Deus",

@@ -46,6 +46,10 @@
             padding-bottom: 0px !important;
         }
 
+        .divider {
+            margin-top: 3em !important;
+        }
+
     </style>
 
     <script src="js/jquery-3.4.1.min.js"></script>
@@ -63,6 +67,10 @@
     -->
 
     <script lang="javascript">
+        Handlebars.registerHelper('lexicon', function(myword) {
+            return configuration.lexicon[myword];
+        });
+
         function getCodeParts(code) {
             // Splits the code into segments, then hammer out all the doubles and returns a list of those segments
             var codes = code.match(/.{2}/g) || [];
@@ -101,6 +109,7 @@
 
         function grabEntriesFromConfig(code) {
             var entries = [];
+            var generics = []
 
             // Grab the now validated code parts from the cachedCodes
             var parts = getCodeParts(code);
@@ -112,12 +121,17 @@
             for (var collection in configuration.codes) {
                 for(entry in configuration.codes[collection]) {
                     if(!("code" in configuration.codes[collection][entry]) || code === false) {
-                        entries.push(configuration.codes[collection][entry])
+                        generics.push(configuration.codes[collection][entry])
                     }
                 }
             }
 
-            return entries
+            result = {
+                generics: generics,
+                entries:entries
+            }
+
+            return result
         }
 
         qrcode = false;
@@ -216,11 +230,29 @@
     </script>
 
     <script id="welcome-template" type="text/x-handlebars-template">
-        <p>{{introduction}}</p>
+        <div class="ui grid tight">
+            <div class="sixteen wide column tight"></div>
+            <div class="ten wide column"></div>
+            <div class="one wide column"><img alt="" src="img/label.jpg"/></div>
+            <div class="five wide column">
+              <p class="cali">{{lexicon "ministry_title"}}</p>
+              <p class="cali"><i>{{lexicon "ministry_title2"}}</i></p>
+            </div>
+        </div>
+
+        <div class="ui main text container">
+            <h1 class="ui header cali">{{lexicon "page_title"}}</h1>
+            <p>{{lexicon "introduction"}}</p>
+        </div>
+
     </script>
 
     <script id="entry-template" type="text/x-handlebars-template">
-        {{#each this}}
+        <p></p>
+         <div class="ui horizontal divider">
+              {{lexicon "whatyouknow"}}
+        </div>
+        {{#each this.entries}}
         <div class="column">
             <div class="ui segment raised">
                 <div class="content">
@@ -231,6 +263,21 @@
             </div>
         </div>
         {{/each}}
+         <div class="ui horizontal divider">
+              {{lexicon "whateverybodyknows"}}
+        </div>
+        {{#each this.generics}}
+        <div class="column">
+            <div class="ui segment raised">
+                <div class="content">
+                    <h4>{{description}}</h4>
+                    <!-- Tripple moustachios to be able to use HTML in context variables -->
+                    <div class="description">{{{context}}}</div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
     </script>
 
     <script id="admin-template" type="text/x-handlebars-template">
@@ -250,21 +297,7 @@
 
 </head>
 <body>
-
-<div class="ui grid tight">
-  <div class="sixteen wide column tight"></div>
-  <div class="ten wide column"></div>
-    <div class="one wide column"><img alt="" src="img/label.jpg"/></div>
-    <div class="five wide column">
-      <p class="cali">General Intelligence and Security Service</p>
-      <p class="cali"><i>Ministry of Internal Affairs</i></p>
-  </div>
-</div>
-
-<div class="ui main text container">
-    <h1 class="ui header cali">Context page</h1>
-    <div id="welcome"></div>
-</div>
+<div id="welcome"></div>
 
 <div class="ui negative message hidden" id="invalidcode">
     <i class="close icon"></i>
@@ -291,7 +324,6 @@
     <div class="column"><div id="qrcode" class="ui text center aligned"></div></div>
 </div>
 
-<h3 class="ui center aligned header">What you know..</h3>
 <div class="ui two column stackable grid container" id="entries">
     <div class="segment center aligned">..is nothing at the moment. This is probably due to not entering a code. You can find the correct URL at the bottom of your character form or by scanning the QR code with your telephone.</div>
 </div>
