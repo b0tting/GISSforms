@@ -39,9 +39,12 @@ The entry types have no actual function at the moment, they just add some clarit
 
 ### URL
 In the configuration file there is mention of an URL used to generate the QR codes. This is optional, if left empty it will use the current browser URL as a base.
-   
+  
+### Localization
+You can change the different texts used in the "lexicon" entry of the giss.js configiration file
 
-# Libaries used
+# Thanks to
+I used the following javascript frameworks. Thank you for your effort! 
 - Semantic UI
 - JQuery
 - Handlebars.js
