@@ -1,12 +1,17 @@
 configuration = {
     "url": "https://eproprio.otting.org/",
     "lexicon": {
-      "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
+        "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
         "ministry_title": "General Intelligence and Security Service",
         "ministry_title2": "Ministry of Internal Affairs",
         "page_title":"Context page",
         "whatyouknow": "What you know..",
         "whateverybodyknows":"What everybody knows..",
+        "errors": {
+            "incorrect_code" : { "short":"Your code is not correct.", "long":"This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
+            "no_code" : {"short":"No code found", "long": "This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
+            "no_exist_code": {"short":"Code does not exist","long":"Your code was technically correct but this combination does not exist. Please consult your game master."}
+        }
     },
     "codes": {
         "general": [{
