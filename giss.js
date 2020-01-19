@@ -96,7 +96,7 @@ configuration = {
                 "context": " Nationale politieke partij. Heeft zowel in de eerste als tweede kamer een meerderheid en is daarmee concreet de heersende partij van Nederland. Naast het willen verlaten van de EU (Nexit) en het verbod op Verus Deus, wil GON dat (de rest van) Nederland samengaan met België en Luxemburg zodat er een Groot-Nederland kan ontstaan."
             },{
                 "code":"ED",
-                "description": "Nederlandse organisatie der wetenschappers",
+                "description": "Nederlandse organisatie der wetenschappers, NODW",
                 "context": "Stichting die zich inzet voor het bevorderen van wetenschappelijk onderzoek in Nederland. Hun voornaamste standpunt is het tegengaan van pseudowetenschap. Ze zijn vooral bekend van rechtszaken tegen social media op het gebied van anti-vaccinatie en klimaatsceptici."
             },{
                 "code":"ET",
@@ -149,64 +149,64 @@ configuration = {
                 "context": "Na onderzoek is gebleken dat u de schrijver van het artikel: De zondvloed van Amsterdam: hoe God de ongelovigen heeft gestraft."
             },{
                 "code":"GI",
-                "description": "Openly writing as an atheist",
-                "context": "Research has shown that you are known on several so-called internet forums under the name `Atheist01`, and are actively protesting against religious influences."
+                "description": "Schrijver van extremistische anti-religieuze artikelen",
+                "context": "Na onderzoek is gebleken dat u op meerdere zogenoemde ‘internetfora’ bekend bent onder de naam ‘Atheist01’ en openlijk ageert tegen religie."
             },{
                 "code":"GJ",
-                "description": "You have been a suspect in the investigation into forgery of documents on behalf of the organization Cow defense force",
-                "context": "The militant organization strives for freedom for cattle and in particular dairy cows so that they are no longer used. Criminal offenses are committed such as the release of cows in nature reserves from surrounding farms."
+                "description": "U bent verdachte geweest in het onderzoek naar valsheid in geschrifte uit naam van de organisatie Cow defense force",
+                "context": "De organisatie streeft naar vrijheid van runderen en in het bijzonder melkveekoeien zodat deze niet meer gebruikt worden. Daarbij worden strafbare feiten gepleegd zoals het vrijlaten van koeien in natuurgebieden vanuit omliggende boerderijen. "
             },{
                 "code":"GK",
-                "description": "Lackofclass website messages against climate change",
-                "context": "You have an account on the website www.lackofclass.nl and has written the following among other things: `Greta Turnberg= climate soldier, child soldier. ` Lackofclass is a website for inflammatory articles and extremist views."
+                "description": "Schrijver van opruiende teksten tegen klimaatactivisten",
+                "context": " U heeft een account op de website www.klassegebrek.nl en heeft daar onder andere het volgende geschreven: Greta = klimafaat kindsoldaat. Klassegebrek is een website met opruiende artikelen en extremistische beelden."
             },{
                 "code":"GL",
-                "description": "You are the founder of DACV, Dutch association for critical vaccination",
-                "context": "Association that opposes vaccination and tries to convince people not to vaccinate their children. You have actively taken part in demonstrations and flyered to make people aware."
+                "description": "U bent de oprichter van NVKP, de Nederlandsche vereniging kritisch prikken",
+                "context": "Vereniging die tegen vaccineren is en probeert mensen over te halen hun kinderen niet te vaccineren. Je hebt actief deelgenomen aan demonstraties en flyers uitgedeeld om mensen bewust te maken van het standpunt."
             },{
                 "code":"GM",
-                "description": "Unlawful use of subsidies",
-                "context": "You have repeatedly received a subsidy from DOSC, the Dutch Organization for Scientific Research, for research without this having produced any results. You have been summoned by the DOSC to repay these subsidies."
+                "description": "Verdacht van oneigenlijk gebruik van subsidies van NODW ",
+                "context": "Je hebt herhaaldelijk subsidie ontvangen van de Nederlandse Organisatie der Wetenschappers, de NODW, zonder het afgesproken resultaat te produceren. Je bent gesommeerd om dit geld terug te betalen aan de NODW."
             },{
                 "code":"GN",
-                "description": "You are an immigrant",
-                "context": "You are a last-chance immigrant, you immigrated to the Netherlands in the year before the immigrationstop."
+                "description": "U bent een laatste-kans immigrant",
+                "context": "U bent een laatste kans immigrant, u bent in het jaar voor de immigratiestop naar Nederland geïmmigreerd."
             },{
                 "code":"GO",
-                "description": "You are a suspect in the so-called `Blocking Frisians` case.",
-                "context": "The blocking frisians organize active counter-demonstrations against eg 2gether, the main purpose of which seems to be riots. The blocking frisians have ensured that a demonstration by 2gether (Political party whose main objective is equality whereby they are committed to government quotas for minorities, open borders and compensation for the Dutch colonial history) could not go ahead because they blocked the motorways to Leeuwarden, the main city of the province Friesland (translation: Frisianland)"
+                "description": "U bent verdachte in de zogenoemde Blokkeer-friezen zaak",
+                "context": "De blokkeerfriezen hebben ervoor gezorgd dat een demonstratie van 2gether (Politieke partij met als belangrijkste streven gelijkwaardigheid waarbij zij zich inzetten voor overheidsquota, herinvoering van immigratie en herstelbetalingen voor het slavernijverleden) niet door kon gaan doordat zij de snelwegen richting Leeuwarden hebben geblokkeerd. De blokkeerfriezen organiseren actief tegen-demonstraties tegen 2gether, waarbij het voornaamste doel lijkt te zijn om te rellen."
             },{
                 "code":"GP",
-                "description": "You are associated with the so-called squat `Vrankrijk 2`.",
-                "context": "There are still empty houses and other buildings, even in these times in the Netherlands. One of the buildings being squatted, has been occupied by the Vrankrijk 2 action group. The action group is squatting empty buildings, such as houses, basements, barns and bicycle lockers."
+                "description": "U bent gesignaleerd als regelmatige bezoeker van het zogenoemde kraakpand ‘Vrankrijk 2’",
+                "context": "Er is nog steeds sprake van leegstand, zelf in deze tijden van hoge woningnood. Een van deze panden is gekraakt door de actiegroep Vrankrijk 2. De groep kraakt lege gebouwen zoals huizen, kelders, schuren en fietsenkluizen."
             },{
                 "code":"GQ",
-                "description": "Send communication back to the RSC",
-                "context": "You have sent the communication, sent to you by the RSC, back without opening. With the following message in pen on the envelope: `I have worked hard for my money and I will not let those lazy cunts take it.`"
+                "description": "Heeft communicatie teruggestuurd naar de CBH",
+                "context": "U heeft de door het CBH naar u gestuurde communicatie ongeopend retour gestuurd met hierop in pen op de envelop de volgende boodschap: Ik heb hard gewerkt voor mijn geld en dat laat ik me niet afpakken door die luie klojos."
             },{
                 "code":"GR",
-                "description": "You have been identified as a possible member of Farmer rebellion",
-                "context": "Organization that strives for improving the position, and more land, for cattle farmers on behalf of those cattle farmers. They thereby commit offenses such as the release of cows in areas that are designated as nature reservations, and members of this group have set fire to nature reservations."
+                "description": "U bent aangemerkt als mogelijk lid van Farmer rebellion",
+                "context": "Organisatie die uit naam van de veeboeren streeft naar een verbeterde positie en meer ruimte voor veeboeren en daarbij strafbare feiten pleegt zoals het vrijlaten van koeien op gebieden die als natuurgebied zijn aangemerkt. Daarnaast hebben leden vand e organisatie brand gesticht in natuurgebieden."
             },{
                 "code":"GS",
-                "description": "You have been marked as a possible member of `Construction first!`",
-                "context": "It has been imposed by the government that building may only take place if no archaeological finds or endangered species are found. This organization strives for an improved position and more space for constructions, to improve employment and housing shortage, on behalf of the construction organizations. Criminal offenses are committed, such as the removal of endangered species so that no objections can be found and the destruction of archaeological finds."
+                "description": "U bent aangemerkt als mogelijk lid van Construction first!",
+                "context": "Er is vanuit de overheid aangegeven dat de wetgeving rond vergunningen voor bouwen niet worden aangepast aan de nieuwe situatie, waardoor er alleen gebouwd kan worden als er geen sprake is van een archeologische vindplaats of bedreigde diersoorten. Deze organisatie streeft uit naam van de bouworganisaties naar een verbeterde positie van de bouw en meer ruimte voor bebouwing, ivm werkgelegenheid en het tegengaan van het tekort aan woningen. Daarbij worden strafbare feiten gepleegd zoals het verwijderen van bedreigde diersoorten en het vernietigen van archeologische vondsten zodat er geen bezwaar tegen bebouwing gevonden kan worden."
             },{
                 "code":"GT",
-                "description": "You have been a member of the Guerilla bee keepers, where you have been a suspect in a criminal case",
-                "context": "The organization strives for more natural areas and strives for more space for bees and has therefore removed buildings in cities and planted flowers in their place."
+                "description": "U bent lid geweest van de Guerilla bee keepers, waarbij u verdachte bent geweest in een strafzaak",
+                "context": "De organisatie streeft naar meer ruimte voor bijen en heeft daarom in steden bebouwing weggehaald en bloemen daarvoor in de plaats geplant."
             },{
                 "code":"GU",
-                "description": "You were the organizer of the prohibited so-called New Years climate demonstration.",
-                "context": "This is a pro-climate demonstration, following statements by Greta Turnberg, where the most important point was a total ban on combustion engines. During an earlier demonstration of this group, riots broke out and cars were disabled."
+                "description": "U was organisator van de verboden zogenoemde nieuwjaars klimaatdemonstratie",
+                "context": "Dit is een pro-klimaat demonstratie, naar aanleiding van de uitspraken van Greta Turnberg, waarbij het belangrijkste statement was het verbod op verbrandingsmotoren. Tijdens een eerdere demonstratie van de groep zijn er rellen uitgebroken en auto’s onklaar gemaakt."
             },{
                 "code":"GV",
-                "description": "Doomsday prepper",
-                "context": "You participated in the so-called `Doomsday preppers` symposium. You think the end is near, and are actively preparing yourself and the people close to you against whatever you think is coming your way."
+                "description": "U behoort tot de beweging van Doomsday preppers",
+                "context": "U heeft deel genomen aan het symposium voor zogenoemde ‘Doomsday preppers’. Je denkt dat het einde nabij is en bent actief bezig met de voorbereidingen om jezelf en je geliefden te beschermen tegen wat het ook is wat je denkt dat eraan komt."
             },{
                 "code":"GW",
-                "description": "Speaking against WeCAN",
-                "context": "You spoke against the political party WeCAN under the name `NoCanDo` on the so-called DarkWeb on the forum `WeCAN Resist!`"
+                "description": "U heeft u uitgesproken tegen GON",
+                "context": "U heeft zich onder de naam GeeftNiet op het zogenoemde DarkWeb op het forum Anti-GON! uitgesproken tegen de politieke partij GON."
             }]
     }
 };
