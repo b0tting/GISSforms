@@ -117,36 +117,36 @@ configuration = {
             }],
         "ADI": [{
                 "code":"GA",
-                "description": "Membership of NDAH, the New Dutch anarchist humanitarians",
-                "context": "Political organization that strives for a government without a central organization and wants to divide the common space on the basis of scientific evidence. They also strive for a universal basic income."
+                "description": "Lidmaatschap van de organisatie NNAS, de nieuw Nederlandse anarchistische humanitairen",
+                "context": "Politieke organisatie die streeft naar een overheid zonder centrale organisatie en op basis van wetenschappelijk bewijs de gemeenschappelijke ruimte wil verdelen. Daarnaast streven ze naar een basisinkomen."
             },{
                 "code":"GB",
-                "description": "Membership of PAI, Patriots Against Immigration",
-                "context": "Militant organization that strives to preserve Dutch values and to protest against external influences, such as immigrants. Known for violent demonstrations."
+                "description": "Lidmaatschap van VaTI, Vaderlanders Tegen immigratie",
+                "context": "Militante organisatie die streeft naar het behoud van Nederlandse waarden en protesteren tegen invloeden van buitenaf, zoals immigranten meebrengen. Bekend van hun gewelddadige demonstraties."
             },{
                 "code":"GC",
-                "description": "Membership of the political party MijnGroningen",
-                "context": "The political party whose sole position is the independence of the province of Groningen. And as a consequence of that independence: the gas benefits to be payed only to the people of Groningen, with retroactive effect."
+                "description": "Lidmaatschap van de politieke partij MijnGroningen",
+                "context": "De politieke partij met als enige standpunt de onafhankelijkheid van de provincie Groningen. Daarbij zouden de gasopbrengsten ook van de Groningers zijn en zou dit met terugwerkende kracht moeten worden terugbetaald."
             },{
                 "code":"GD",
-                "description": "Regular donations to 2Gether, the political party",
-                "context": "Political party whose main objective is equality whereby they are committed to government quotas for minorities, open borders and compensation for the Dutch colonial history."
+                "description": "Regelmatige donaties aan de politieke partij 2Gether",
+                "context": "Politieke partij met als belangrijkste streven gelijkwaardigheid waarbij zij zich inzetten voor overheidsquota, herinvoering van immigratie en herstelbetalingen voor het slavernijverleden."
             },{
                 "code":"GE",
-                "description": "Volunteer for the political party WeCAN",
-                "context": "National political party. Has a majority in both the Senate and House of representatives and is therefore the ruling party of the Netherlands. In addition to wanting to leave the EU (Nexit) and the ban on Verus Deus, WeCAN wants (the remains of) the Netherlands to merge with Belgium and Luxembourg to create the Great-Netherlands."
+                "description": "Vrijwilligerswerk voor de politieke partij Geef om Nederland",
+                "context": "Nationale politieke partij. Heeft zowel in de eerste als tweede kamer een meerderheid en is daarmee concreet de heersende partij van Nederland. Naast het willen verlaten van de EU (Nexit) en het verbod op Verus Deus, wil GON dat (de rest van) Nederland samengaan met België en Luxemburg zodat er een Groot-Nederland kan ontstaan."
             },{
                 "code":"GF",
-                "description": "Membership of the political party Forum for Freedom and Democracy (FFD)",
-                "context": "National political party. WeCANs main competitor. In addition to wanting a smaller government and standing for the protection of Dutch values, the party particularly wants to make it compulsory for immigrants to emigrate so that there is more room for the real Dutch. Climate skeptics."
+                "description": "Lidmaatschap van de politieke partij Forum voor Vrijheid en Democratie (FVVD)",
+                "context": "Nationale politieke partij. Belangrijkste concurrent van GON. Naast een kleinere overheid en het beschermen van Nederlandse waarden, wil de partij vooral de immigranten verplicht laten emigreren zodat er meer ruimte komt voor de echte Nederlanders. Klimaatsceptici."
             },{
                 "code":"GG",
-                "description": "Membership of the political part The waterparty",
-                "context": "Political party that strives for more freedom for the water and wants to remove the dikes because this removes their natural freedom."
+                "description": "Lidmaatschap van de Waterpartij",
+                "context": "Politieke partij die streeft naar meer vrijheid voor het water en de dijken weg wil halen omdat dit de natuurlijke vrijheid wegneemt."
             },{
                 "code":"GH",
-                "description": "Writer of extremist religious articles",
-                "context": "Research has shown that you are the author of the article `The flood of Amsterdam: how God punished the unbelievers.`"
+                "description": "Schrijver van extremistische religieuze artikelen",
+                "context": "Na onderzoek is gebleken dat u de schrijver van het artikel: De zondvloed van Amsterdam: hoe God de ongelovigen heeft gestraft."
             },{
                 "code":"GI",
                 "description": "Openly writing as an atheist",
