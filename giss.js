@@ -2,12 +2,12 @@ configuration = {
     "url": "https://eproprio.otting.org/",
     "git_command": "pull",
     "lexicon": {
-        "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
-        "ministry_title": "General Intelligence and Security Service",
-        "ministry_title2": "Ministry of Internal Affairs",
-        "page_title":"Context page",
-        "whatyouknow": "What you know..",
-        "whateverybodyknows":"What everybody knows..",
+        "introduction": "Dit is de pagina voor De CBH. Hier vind je extra (persoonlijke) informatie over de groepen die in je formulieren zijn genoemd.",
+        "ministry_title": "Algemene Dienst Inlichtingen",
+        "ministry_title2": "Ministerie van Interne Aangelegenheden",
+        "page_title":"Context pagina",
+        "whatyouknow": "Wat jij weet..",
+        "whateverybodyknows":"What iedereen weet..",
         "errors": {
             "incorrect_code" : { "short":"Your code is not correct.", "long":"This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
             "no_code" : {"short":"No code found", "long": "This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
@@ -17,71 +17,71 @@ configuration = {
     "codes": {
         "general": [{
                 "description": "Verus Deus",
-                "context": "They believe in the authentic gods and flat earth. The flooding of the Netherlands is seen as a punishment of God. Pray 4 times a day, dietary restrictions, 10% donation mandatory. You expect your roommate to comply with your laws of faith."
+                "context": "Ze geloven in authentieke goden en platte aarde. De watersnoodramp in 2003 wordt gezien als een straf van God. Er wordt meerdere keren per dag gebeden, er zijn spijswetten en verplichte donaties aan de geloofsgemeenschap."
             },{
-                "description": "The Frisian doctrine",
-                "context": "Strict religion which sees the province of ‘Frisia (Friesland) as the center of religious origin. Prophet is John the Frisian. There are dress codes, no electronic devices allowed in the house. You expect your roommate to comply with your laws of faith."
+                "description": "Leer van Frisia",
+                "context": "Streng gelovig, waarbij Friesland wordt gezien als het centrum van religieuze oorsprong. De profeet van Frisia is Jan de Vries. Er zijn kledingvoorschriften, elektronica is niet toegestaan in huis. "
             },{
-                "description": "WeCAN",
-                "context": "Care about the Netherlands. National political party. Has a majority in both the Senate and House of representatives and is therefore the ruling party of the Netherlands. In addition to wanting to leave the EU (Nexit) and the ban on Verus Deus, WeCAN wants (the remains of) the Netherlands to merge with Belgium and Luxembourg to create the Great-Netherlands."
+                "description": "Geef om Nederland",
+                "context": "Nationale politieke partij. Heeft zowel in de eerste als tweede kamer een meerderheid en is daarmee concreet de heersende partij van Nederland. Naast het willen verlaten van de EU (Nexit) en het verbod op Verus Deus, wil GON dat (de rest van) Nederland samengaan met België en Luxemburg zodat er een Groot-Nederland kan ontstaan."
             },{
-                "description": "FFD",
-                "context": "Forum for Freedom and Democracy. National political party. WeCANs main competitor. In addition to wanting a smaller government and standing for the protection of Dutch values, the party particularly wants to make it compulsory for immigrants to emigrate so that there is more room for the real Dutch. Climate skeptics."
+                "description": "Forum voor Vrijheid en Democratie",
+                "context": "Nationale politieke partij. Belangrijkste concurrent van GON. Naast een kleinere overheid en het beschermen van Nederlandse waarden, wil de partij vooral de immigranten verplicht laten emigreren zodat er meer ruimte komt voor de echte Nederlanders. Klimaatsceptici."
             }],
         "housing": [{
                 "code":"HA",
-                "description": "2 bedroom apartment",
-                "context": "You own a <b>small</b> (32 m2) two room apartment in a badly maintained apartment complex in the suburbs of the city of Assen. It's already wayyy to small as it is, no way that you want to share this."
+                "description": "3-kamer appartement",
+                "context": "Je hebt een <b>klein</b> (32 m2) 3-kamer appartement in een slecht onderhouden appartementgebouw in de achterbuurten van Assen. Het is veeeeel te klein, echt niet dat je dit ook nog met iemand wil delen!"
             },{
                 "code":"HB",
-                "description": "3 bedroom apartment",
-                "context": "You own a three room apartment near the center of Assen, which you share with your 9 cats."
+                "description": "4-kamer appartement",
+                "context": "Je bent de eigenaar van een 4-kamer appartement nabij het centrum van Assen, dit deel je met je 9 katten."
             },{
                 "code":"HC",
-                "description": "1 bedroom appartment",
-                "context": "This can’t be right! You have just 1 bedroom so no extra space. But you have been summoned to the RSC and refusal can mean losing your house…"
+                "description": "2-kamer appartement",
+                "context": "Dit kan niet kloppen! Je hebt maar 1 slaapkamer dus geen extra ruimte voor een huisgenoot. Maar je bent opgeroepen door de CBH en niet op komen dagen kan betekenen dat je je huis kwijt bent..."
             },{
                 "code":"HE",
-                "description": "2 bedroom apartment",
-                "context": "You have a nice appartment in decent shape, about 45m2. Its om the third floor though, and no elevator or garden. To compensate for the lack of garden, your house is full with plants."
+                "description": "3-kamer appartement",
+                "context": "Je hebt een fijn appartement in redelijke staat, ongeveer 45m2. Het is wel op de 3de verdieping en er is geen lift of buitenruimte. Om dat te compenseren heb je je hele huis vol gezet met planten."
             },{
                 "code":"HF",
-                "description": "2 bedroom apartment",
-                "context": "You own a small (37m2) two bedroom apartment in a badly maintained apartment complex in the suburbs of the city of Assen. Its on the ground floor thouh, and you also have a nice backgarden"
+                "description": "3-kamer appartement",
+                "context": "Je bent de eigenaar van een klein (37m2) 3-kamer appartement in een slecht onderhouden appartementen complex in de buitenwijken van Assen. Gelukkig is het op de begane grond en heb je een fijne tuin erbij."
             },{
                 "code":"HG",
-                "description": "2 bedroom apartment",
-                "context": "You have a nice appartment in decent shape, about 50m2. Its om the third floor though but with an elevator and balcony"
+                "description": "3-kamer appartement",
+                "context": "Je hebt een leuk appartement in een redelijke staat, ongeveer 50m2. Het is op de 4de verdieping maar er is gelukkig een lift aanwezig. En je hebt een groot balkon."
             },{
                 "code":"HI",
-                "description": "Small house",
-                "context": "You have a reasonable sized house, about 80m2, with a back garden, 2 floors. You would very happely share the house with other people, there is enough space available."
+                "description": "Klein huis",
+                "context": "Je hebt een huis van een redelijke grootte, ongeveer 80m2, met een achtertuin en 2 verdiepingen. Je wil het graag delen met andere mensen, er is genoeg ruimte beschikbaar!"
             },{
                 "code":"HJ",
-                "description": "Normal sized house",
-                "context": "You have a normal house, in a normal neighbourhood, with a back garden, 3 floors. There is absolutely nothing remarkable about it."
+                "description": "Gemiddeld huis van een gemiddelde grootte",
+                "context": "Je hebt een normaal huis met 3 verdiepingen, in een normale buurt, met een achtertuin. Er is absoluut niets opmerkelijks aan je huis."
             },{
                 "code":"HK",
-                "description": "Corner house",
-                "context": "You have a large corner house, about 200m2, with a front and back garden, 3 floors, in the best part of Assen. And you are very proud, you don't want anything to happen to your house."
+                "description": "Hoekhuis",
+                "context": "Je hebt een groot hoekhuis, ongeveer 200m2, met een voor- en achtertuin, 3 verdiepingen, in de beste wijk in Assen. En je bent erg trots op je huis, je wil absoluut niet dat er iets mis mee gaat."
             },{
                 "code":"HL",
-                "description": "Large manor",
-                "context": "You have it all! Your live just outside Assen. You have the grand manor, with a large estate, way more rooms than you can use, stables, etcetera, etcetera..."
+                "description": "Groot landhuis",
+                "context": "Je hebt het allemaal! Je woont net buiten Assen. Je hebt een groot landhuis, met een landgoed er omheen, veel meer kamers dan je kan gebruiken, stallen, een orangerie, enzovoort enzovoort..."
             }],
         "religion": [{
                 "code":"RV",
                 "description": "Verus Deus",
-                "context": "You as a player are totally free to decide what the religion is about. They believe in the authentic gods and flat earth. The flooding of the Netherlands is seen as a punishment of God. Pray 4 times a day, dietary restrictions, 10% donation mandatory. You expect your roommate to comply with your laws of faith."
+                "context": "Je hebt als speler alle vrijheid om te beslissen waar deze religie om draait. Ze geloven in authentieke goden en platte aarde. De watersnoodramp in 2003 wordt gezien als een straf van God. Er wordt meerdere keren per dag gebeden, er zijn spijswetten en verplichte donaties aan de geloofsgemeenschap. Je verwacht van je huisgenoot, ongeacht wie de eigenaar van de woning is, dat deze zicht houdt aan de voorschriften van je geloof."
             },{
                 "code":"RF",
-                "description": "The Frisian doctrine",
-                "context": "You as a player are totally free to decide what the religion is about. Strict religion which sees the province of ‘Frisia (Friesland) as the center of religious origin. Prophet is John the Frisian. There are dress codes, no electronic devices allowed in the house. You expect your roommate to comply with your laws of faith."
+                "description": "De leer van Frisia",
+                "context": "Je hebt als speler alle vrijheid om te beslissen waar deze religie om draait. Streng gelovig, waarbij Friesland wordt gezien als het centrum van religieuze oorsprong. De profeet van Frisia is Jan de Vries. Er zijn kledingvoorschriften, elektronica is niet toegestaan in huis. Je verwacht van je huisgenoot, ongeacht wie de eigenaar van de woning is, dat deze zicht houdt aan de voorschriften van je geloof."
             }],
         "employment": [{
                 "code":"EE",
                 "description": "eProPrio in Drachten",
-                "context": "Your employer is eProPrio, a Chinese owned social media and software company. Currently the largest in the world. Your job is setting up queries for the Dutch and European secret services to report individual profiling by group membership and message content"
+                "context": "Een Chinees Software bedrijf, voornamelijk bekend van de AI en de social media die het heeft ontwikkeld. Is verwikkeld in een schandaal rond het leveren van gegevens aan de ADI, de Algemene Dienst Inlichtingen. a Chinese owned social media and software company. Currently the largest in the world. Your job is setting up queries for the Dutch and European secret services to report individual profiling by group membership and message content"
             },{
                 "code":"EN",
                 "description": "Nature heritage foundation in Smilde",
