@@ -80,42 +80,42 @@ configuration = {
             }],
         "employment": [{
                 "code":"EE",
-                "description": "eProPrio in Drachten",
-                "context": "Een Chinees Software bedrijf, voornamelijk bekend van de AI en de social media die het heeft ontwikkeld. Is verwikkeld in een schandaal rond het leveren van gegevens aan de ADI, de Algemene Dienst Inlichtingen. a Chinese owned social media and software company. Currently the largest in the world. Your job is setting up queries for the Dutch and European secret services to report individual profiling by group membership and message content"
+                "description": "eProPrio te Drachten",
+                "context": "Een Chinees Software bedrijf, grootste ter wereld, voornamelijk bekend van de AI en de social media die het heeft ontwikkeld. Is verwikkeld in een schandaal rond het leveren van gegevens aan de ADI, de Algemene Dienst Inlichtingen, over onder andere groepslidmaatschappen en zoekopdrachten."
             },{
                 "code":"EN",
-                "description": "Nature heritage foundation in Smilde",
-                "context": "Foundation for the preservation of existing nature areas in the Netherlands. Their main view point is that no nature may be turned into farms, buildings or used for tourism. And actually want more room for nature, but thats not common knowledge."
+                "description": "Stichting natuurerfgoed te Smilde",
+                "context": "Stichting ten behoud van de al bestaande natuurgebieden in Nederland. Voornaamste standpunt is dat er geen natuur mag worden opgeofferd voor boeren, bebouwing of toerisme. En ze willen ervoor zorgen dat er meer ruimte beschikbaar komt voor natuur, maar dat is geen algemene kennis."
             },{
                 "code":"EF",
-                "description": "Forum for Freedom and Democracy (FFD) in Assen",
-                "context": "National political party. WeCANs main competitor. In addition to wanting a smaller government and standing for the protection of Dutch values, the party particularly wants to make it compulsory for immigrants to emigrate so that there is more room for the real Dutch. Climate skeptics."
+                "description": "Forum voor Vrijheid en Democratie (FVVD) te Assen",
+                "context": "Nationale politieke partij. Belangrijkste concurrent van GON. Naast een kleinere overheid en het beschermen van Nederlandse waarden, wil de partij vooral de immigranten verplicht laten emigreren zodat er meer ruimte komt voor de echte Nederlanders. Klimaatsceptici."
             },{
                 "code":"EW",
-                "description": "WeCAN in Assen",
-                "context": "National political party. Has a majority in both the Senate and House of representatives and is therefore the ruling party of the Netherlands. In addition to wanting to leave the EU (Nexit) and the ban on Verus Deus, WeCAN wants (the remains of) the Netherlands to merge with Belgium and Luxembourg to create the Great-Netherlands."
+                "description": "Geef om Nederland (GON) te Assen",
+                "context": " Nationale politieke partij. Heeft zowel in de eerste als tweede kamer een meerderheid en is daarmee concreet de heersende partij van Nederland. Naast het willen verlaten van de EU (Nexit) en het verbod op Verus Deus, wil GON dat (de rest van) Nederland samengaan met België en Luxemburg zodat er een Groot-Nederland kan ontstaan."
             },{
                 "code":"ED",
-                "description": "Dutch society for scientists",
-                "context": "Foundation that is committed to promoting scientific research in the Netherlands. Their main position is an active commitment against pseudoscience. Best known for lawsuits against social media in the field of anti-vaccination and climate skeptics."
+                "description": "Nederlandse organisatie der wetenschappers",
+                "context": "Stichting die zich inzet voor het bevorderen van wetenschappelijk onderzoek in Nederland. Hun voornaamste standpunt is het tegengaan van pseudowetenschap. Ze zijn vooral bekend van rechtszaken tegen social media op het gebied van anti-vaccinatie en klimaatsceptici."
             },{
                 "code":"ET",
-                "description": "Iris Agricultural technique B.V in Laaghalen",
-                "context": "Company that develops techniques for dairy farming. It is also a lobby party for dairy farmers. Their main objective is to create more space for cows."
+                "description": "Iris Agritechniek B.V te Laaghalen",
+                "context": "Bedrijf dat technieken ontwikkelt voor de melkveehouderij. Vooral bekend als lobbypartij voor melkveehouders. Hun belangrijkste doel is ervoor zorgen dat er meer ruimte beschikbaar komt voor veeteelt. "
             },{
                 "code":"EO",
-                "description": "Ocean Construction company in Hooghalen",
-                "context": "Company that carries out major construction projects such as new housing developments around Assen. Lobby party for more land for constructions. Obviously more houses is better, there is way more housing needed."
+                "description": "Van der Zee bouwbedrijf te Hooghalen",
+                "context": "Bedrijf dat grote bouwprojecten uitvoert zoals nieuwbouwwijken rond Assen. Vooral bekend als lobbypartij voor meer ruimte voor woningen. Natuurlijk is het veel beter als er meer huizen worden gebouwd, er is gewoon veel meer nodig. Daar willen ze best een handje bij helpen."
             },{
                 "code":"EG",
-                "description": "Golf course ‘Maxima lake’ in Assen",
-                "context": "Tourist attraction, the golf course is the place for the annual European Golf Championships. You are happy that you have a job, so want to make sure that the golf course stays."
+                "description": "Golfbaan Willemsvaart te Assen",
+                "context": "Toeristisch trekpleister, de golfbaan is de plek voor de jaarlijkse Europese kampioenschappen Golf. Je bent blij dat je uberhaupt een baan hebt, dus je alles ervoor om te zorgen dat de golfbaan blijft. "
             },{
                 "code":"EM",
-                "description": "Middle Parcs in Nijlande",
-                "context": "Chain of holiday resorts within Europe, big supporter of the EU. Has made huge profits in recent years with the permanent rental of properties, and as an employee, you got your fair share out f it."
+                "description": "Middle Parcs te Nijlande",
+                "context": "Keten van vakantieparken binnen Europa, groot voorstander van de EU. Heeft in Nederland de laatste jaren grote winsten geboekt met de permanente verhuur van vakantiewoningen. En als medewerker heb je daar ook een goede boterham aan, ook vanwege je jaarlijkse winstdeling. "
             }],
-        "giss": [{
+        "ADI": [{
                 "code":"GA",
                 "description": "Membership of NDAH, the New Dutch anarchist humanitarians",
                 "context": "Political organization that strives for a government without a central organization and wants to divide the common space on the basis of scientific evidence. They also strive for a universal basic income."
