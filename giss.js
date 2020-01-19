@@ -1,5 +1,6 @@
 configuration = {
     "url": "https://eproprio.otting.org/",
+    "git_command": "pull",
     "lexicon": {
         "introduction": "This is a background context page for the GISS game. Here you will find some personalized additional information on the segments relevant for your character role.",
         "ministry_title": "General Intelligence and Security Service",
