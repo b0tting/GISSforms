@@ -1,5 +1,5 @@
 <?php
-const GIT_COMMAND = "/usr/bin/git pull 2>&1";
+const GIT_COMMAND = "sudo /usr/bin/git pull 2>&1";
 
 print("GISS ghetto CI/CD to pull changes from github or other code repos<br>");
 $logline = "Received GIT webhook request from : $access {$_SERVER['REMOTE_ADDR']} - git command " . GIT_COMMAND;
