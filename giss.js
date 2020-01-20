@@ -1,13 +1,12 @@
 configuration = {
     "url": "https://eproprio.otting.org/",
-    "git_command": "pull",
     "lexicon": {
         "introduction": "Dit is de pagina voor De CBH. Hier vind je extra (persoonlijke) informatie over de groepen die in je formulieren zijn genoemd.",
         "ministry_title": "Algemene Dienst Inlichtingen",
         "ministry_title2": "Ministerie van Interne Aangelegenheden",
         "page_title":"Context pagina",
         "whatyouknow": "Wat jij weet..",
-        "whateverybodyknows":"What iedereen weet..",
+        "whateverybodyknows":"Wat iedereen weet..",
         "errors": {
             "incorrect_code" : { "short":"Your code is not correct.", "long":"This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
             "no_code" : {"short":"No code found", "long": "This page expects a code consiting of letters and number. Something similar to http://eproprio.otting.org?AABACA."},
