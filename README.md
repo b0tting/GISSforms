@@ -43,7 +43,12 @@ In the configuration file there is mention of an URL used to generate the QR cod
 ### Localization
 You can change the different texts used in the "lexicon" entry of the giss.js configiration file
 
-# Thanks to
+# Githu webhook
+There is a simple stupid github webhook php file which is optional in usage. This can be attached to from a github webhook to trigger an automatic pull on the server. This way editors can change the giss.js file without any intervention required to put it online. 
+
+Note that this also requires a sudo rule to allow the webserver to use git commands. 
+
+# Thank s to
 I used the following javascript frameworks. Thank you for your effort! 
 - Semantic UI
 - JQuery
