@@ -6,10 +6,10 @@ It's all static HTML, just upload the whole repo to some webserver or hoster. Yo
 
 # Intended usage
 Not in this repo: players in this game get a randomized "character form". As the form is part of their role we need an outside source to provide additional information which this character would know. Thus, players get a QR code at the bottom for their form. They can scan this QR code and be forwarded to this page, showing only context information relevant for this player.
-![Example player screen](https://github.com/b0tting/GISSforms/tree/master/screens/player.png) 
+![Example player screen](https://github.com/b0tting/GISSforms/raw/master/screens/player.png) 
 
 For game setup, the organizer should use the ?ADMIN parameter, for example, <https://eproprio.otting.org/?ADMIN>. From here, the organizer can consider which codes to add to a form and add these together by clicking the red ribbons. Then either add the given URL directly to the form or use the generated QR code image. 
-![Example admin screen](https://github.com/b0tting/GISSforms/tree/master/screens/admin.png)
+![Example admin screen](https://github.com/b0tting/GISSforms/raw/master/screens/admin.png)
    
 # Configuration
 ### Codes
